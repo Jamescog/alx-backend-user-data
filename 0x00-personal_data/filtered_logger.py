@@ -27,5 +27,6 @@ def filter_datum(
             r'({}=)(.*?)(?={}|$)'.format(f, separator),
             message
         )
-        s = re.sub(regex.group(2), redaction, s)
+        if regex:
+            s = re.sub(regex.group(2), redaction, s)
     return s
