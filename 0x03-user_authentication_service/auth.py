@@ -14,7 +14,7 @@ def _hash_password(password: str) -> bytes:
     return hashpw(password.encode(), salt)
 
 
-def __generate_uuid() -> str:
+def _generate_uuid() -> str:
     """generate and return uuid"""
     return str(uuid4())
 
