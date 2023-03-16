@@ -11,7 +11,7 @@ Base = declarative_base()
 
 
 class User(Base):
-    """Model that represent user in database
+    """Model that represents user in database
     """
 
     __tablename__ = "users"
@@ -19,4 +19,4 @@ class User(Base):
     email = Column(String(250), nullable=False)
     hashed_password = Column(String(250), nullable=False)
     session_id = Column(String(250))
-    reset_token = Column(String(250))
+    reset_token = Column(String(25))
