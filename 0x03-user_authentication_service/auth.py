@@ -30,13 +30,12 @@ class Auth:
 
             return user
         raise ValueError("User {} already exists".format(email))
-    
+
     def valid_login(self, email: str, password: str) -> bool:
         """Check email and password"""
         try:
             user = self._db.find_user_by(email=email)
             hashed = user.hashed_password
-            return checkpw(password, hashed)
+            return checkpw(password.encode(), hashed)
         except NoResultFound:
             return False
-
